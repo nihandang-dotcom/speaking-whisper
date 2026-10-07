@@ -1,4 +1,4 @@
-import { pipeline } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1";
+import { pipeline } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.2";
 
 let transcriber = null;
 
@@ -53,7 +53,8 @@ async function transcribe() {
 
   } catch (error) {
     console.error(error);
-    status.innerText = "Có lỗi khi xử lý file: " + error.message;
+    status.innerText =
+      "Có lỗi khi xử lý file: " + error.message;
   }
 }
 
