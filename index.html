@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Speaking Practice</title>
+</head>
+
+<body>
+  <h1>Speaking Practice</h1>
+
+  <p>Upload your speaking recording:</p>
+
+  <input type="file" id="audioFile" accept="audio/*,video/*">
+
+  <br><br>
+
+  <button onclick="transcribe()">Transcribe</button>
+
+  <p id="status"></p>
+
+  <textarea
+    id="result"
+    rows="10"
+    cols="60"
+    placeholder="Your transcript will appear here..."
+  ></textarea>
+
+  <script>
+    async function transcribe() {
+      document.getElementById("status").innerText =
+        "Processing your recording...";
+    }
+  </script>
+</body>
+</html>
