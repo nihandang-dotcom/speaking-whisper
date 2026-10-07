@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Speaking Practice</title>
 </head>
 
 <body>
+
   <h1>Speaking Practice</h1>
 
   <p>Upload your speaking recording:</p>
 
-  <input type="file" id="audioFile" accept="audio/*,video/*">
+  <input
+    type="file"
+    id="audioFile"
+    accept="audio/*,video/*"
+  >
 
   <br><br>
 
-  <button onclick="transcribe()">Transcribe</button>
+  <button onclick="loadWhisper()">
+    Load Whisper
+  </button>
 
-  <p id="status"></p>
+  <button onclick="transcribe()">
+    Transcribe
+  </button>
+
+  <p id="status">
+    Whisper chưa được tải.
+  </p>
 
   <textarea
     id="result"
@@ -25,11 +39,15 @@
     placeholder="Your transcript will appear here..."
   ></textarea>
 
-  <script>
-    async function transcribe() {
-      document.getElementById("status").innerText =
-        "Processing your recording...";
-    }
+  <script type="module">
+    import {
+      loadWhisper,
+      transcribe
+    } from "./whisper.js";
+
+    window.loadWhisper = loadWhisper;
+    window.transcribe = transcribe;
   </script>
+
 </body>
 </html>
